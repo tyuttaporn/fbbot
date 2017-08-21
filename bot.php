@@ -23,9 +23,9 @@ $isData=sizeof($data);
 if (strpos($_msg, 'สอนโปรดปัน') !== false) {
   if (strpos($_msg, 'สอนโปรดปัน') !== false) {
     $x_tra = str_replace("สอนโปรดปัน","", $_msg);
-    $pieces = explode(" ", $x_tra);
-    $_question=str_replace(" ","",$pieces[0]);
-    $_answer=str_replace(" ","",$pieces[1]);
+    $pieces = explode("==", $x_tra);
+    $_question=str_replace("[","",$pieces[0]);
+    $_answer=str_replace("]","",$pieces[1]);
     //Post New Data
     $newData = json_encode(
       array(
@@ -59,7 +59,7 @@ if (strpos($_msg, 'สอนโปรดปัน') !== false) {
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = 'ฮับผม สามารถสอนโปรดปันได้ เพียงพิมพ์: สอนโปรดปัน คำถาม คำตอบ';
+    $arrPostData['messages'][0]['text'] = 'ฮับผม สามารถสอนโปรดปันได้ เพียงพิมพ์: สอนโปรดปัน[คำถาม==คำตอบ]';
   }
 }
 
