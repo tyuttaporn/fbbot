@@ -20,9 +20,9 @@ $json = file_get_contents('https://api.mlab.com/api/1/databases/proadpanbot/coll
 $data = json_decode($json);
 $isData=sizeof($data);
 
-if (strpos($_msg, 'โปรดปัน') !== false) {
-  if (strpos($_msg, 'โปรดปัน') !== false) {
-    $x_tra = str_replace("โปรดปัน","", $_msg);
+if (strpos($_msg, 'สอนโปรดปัน') !== false) {
+  if (strpos($_msg, 'สอนโปรดปัน') !== false) {
+    $x_tra = str_replace("สอนโปรดปัน","", $_msg);
     $pieces = explode("==", $x_tra);
     $_question=str_replace("[","",$pieces[0]);
     $_answer=str_replace("]","",$pieces[1]);
@@ -59,7 +59,7 @@ if (strpos($_msg, 'โปรดปัน') !== false) {
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = 'ฮับผม สามารถสอนโปรดปันได้ เพียงพิมพ์: โปรดปัน[คำถาม==คำตอบ]';
+    $arrPostData['messages'][0]['text'] = 'ฮับผม สามารถสอนโปรดปันได้ เพียงพิมพ์: สอนโปรดปัน[คำถาม==คำตอบ]';
   }
 }
 
