@@ -1,4 +1,4 @@
-app.get('/bot.php', function(req, res) {
+app.get('/bot', function(req, res) {
   if (req.query['hub.mode'] === 'subscribe' &&
       req.query['hub.verify_token'] === <VERIFY_TOKEN>) {
     console.log("Validating webhook");
