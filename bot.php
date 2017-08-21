@@ -59,7 +59,7 @@ if (strpos($_msg, 'สอนโปรดปัน') !== false) {
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = 'ฮับผม สามารถสอนโปรดปันได้ เพียงพิมพ์: สอนโปรดปัน[คำถาม==คำตอบ]';
+    $arrPostData['messages'][0]['text'] = 'ฮับผม โปรดปันงงที่คุณพูด ลองพิมพ์ใหม่ซิครับ';//สามารถสอนโปรดปันได้ เพียงพิมพ์: สอนโปรดปัน[คำถาม==คำตอบ]
   }
 }
 
