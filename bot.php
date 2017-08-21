@@ -20,9 +20,9 @@ $json = file_get_contents('https://api.mlab.com/api/1/databases/proadpanbot/coll
 $data = json_decode($json);
 $isData=sizeof($data);
 
-if (strpos($_msg, 'สอนโปรดปันหน่อย') !== false) {
-  if (strpos($_msg, 'สอนโปรดปันหน่อย') !== false) {
-    $x_tra = str_replace("สอนโปรดปันหน่อย","", $_msg);
+if (strpos($_msg, 'โปรดปัน') !== false) {
+  if (strpos($_msg, 'โปรดปัน') !== false) {
+    $x_tra = str_replace("โปรดปัน","", $_msg);
     $pieces = explode("==", $x_tra);
     $_question=str_replace("[","",$pieces[0]);
     $_answer=str_replace("]","",$pieces[1]);
@@ -45,7 +45,7 @@ if (strpos($_msg, 'สอนโปรดปันหน่อย') !== false) {
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = 'ขอบคุณที่สอนโปรดปัน';
+    $arrPostData['messages'][0]['text'] = 'ขอบคุณที่สอนพี่โปรดปันน้อง';
   }
 }else{
   if($isData >0){
@@ -59,7 +59,7 @@ if (strpos($_msg, 'สอนโปรดปันหน่อย') !== false) {
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = 'ฮับผม คุณสามารถสอนให้ฉลาดได้เพียงพิมพ์: สอน[คำถาม==คำตอบ]';
+    $arrPostData['messages'][0]['text'] = 'ฮับผม สามารถสอนโปรดปันได้ เพียงพิมพ์: โปรดปัน[คำถาม==คำตอบ]';
   }
 }
 
