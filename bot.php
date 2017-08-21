@@ -1,10 +1,11 @@
-app.get('/bot', function(req, res) {
-  if (req.query['hub.mode'] === 'subscribe' &&
-      req.query['hub.verify_token'] === <VERIFY_TOKEN>) {
-    console.log("Validating webhook");
-    res.status(200).send(req.query['hub.challenge']);
-  } else {
-    console.error("Failed validation. Make sure the validation tokens match.");
-    res.sendStatus(403);          
-  }  
-});
+<?php
+
+$challenge = $_REQUEST['hub_challenge'];
+$verify_token = $_REQUEST['hub_verify_token'];
+
+if ($verify_token === 'abc123') {
+  echo $challenge;
+}
+
+$input = json_decode(file_get_contents('php://input'), true);
+error_log(print_r($input, true));
